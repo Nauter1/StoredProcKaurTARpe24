@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using StoredProcedureTARpe24.Data;
 using StoredProcedureTARpe24.Models;
@@ -37,6 +38,11 @@ namespace StoredProcedureTARpe24.Controllers
                     details.Employees = Convert.ToInt32(sdr["Employees"]);
                     details.Location = sdr["Location"].ToString();
                     details.Rating = Convert.ToInt32(sdr["Rating"]);
+                    details.Money = Convert.ToInt32(sdr["Money"]);
+                    details.Crimes = Convert.ToInt32(sdr["Crimes"]);
+                    details.Comment = sdr["Comment"].ToString();
+                    details.FavoriteMonth = sdr["FavoriteMonth"].ToString();
+                    details.VacationDays = Convert.ToInt32(sdr["VacationDays"]);
                     model.Add(details);
                 }
                 return Json(model);
