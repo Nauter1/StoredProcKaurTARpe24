@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StoredProcedureTARpe24.Models;
 
 namespace StoredProcedureTARpe24.Data
 {
@@ -7,5 +8,6 @@ namespace StoredProcedureTARpe24.Data
         public StoredProcDbContext(DbContextOptions<StoredProcDbContext> options)
         : base(options) { }
         
+        public DbSet<Employee> Employees { get; set; }
     }
 }
