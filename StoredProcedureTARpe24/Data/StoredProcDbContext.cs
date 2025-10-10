@@ -9,5 +9,6 @@ namespace StoredProcedureTARpe24.Data
         : base(options) { }
         
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
     }
 }
