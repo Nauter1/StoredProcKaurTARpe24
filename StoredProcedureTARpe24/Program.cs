@@ -1,3 +1,6 @@
+using StoredProcedureTARpe24.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace StoredProcedureTARpe24
 {
     public class Program
@@ -5,6 +8,8 @@ namespace StoredProcedureTARpe24
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<StoredProcDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
