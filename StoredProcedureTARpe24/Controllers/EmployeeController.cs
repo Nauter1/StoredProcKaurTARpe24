@@ -171,7 +171,7 @@ namespace StoredProcedureTARpe24.Controllers
 @Salary int = NULL
 as begin
 	declare @sql nvarchar(max)
-	declare @sqlParams nvarchar(max)							
+	--declare @sqlParams nvarchar(max)							
 																
 	set @sql = 'Select * from Employees where 1 = 1'			
 																
@@ -192,7 +192,16 @@ as begin
 end
 go
  
+        insert into Employees values('Bat','Man','Male',9999)
+insert into Employees values('Super','Mario','Male',4000)
+insert into Employees values('John','Doe','Male',6000)
+insert into Employees values('Jane','Doe','Female',7000)
+insert into Employees values('Alve','Laev','Male',5000)
          
+Create proc spSearchEmployees
+as begin
+Select * from Employees
+end
          */
         [HttpPost]
         public IActionResult SearchDynamicSQL(string FirstName, string LastName, string Gender, int Salary)
